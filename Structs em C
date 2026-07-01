@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+struct Aluno {
+    char nome[50];
+    int idade;
+    float nota;
+};
+
+int main() {
+    struct Aluno aluno;
+
+    printf("Nome: ");
+    scanf(" %[^\n]", aluno.nome);
+
+    printf("Idade: ");
+    scanf("%d", &aluno.idade);
+
+    printf("Nota: ");
+    scanf("%f", &aluno.nota);
+
+    printf("\nNome: %s\n", aluno.nome);
+    printf("Idade: %d\n", aluno.idade);
+    printf("Nota: %.2f\n", aluno.nota);
+
+    return 0;
+}
