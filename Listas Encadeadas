@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct No {
+    int dado;
+    struct No *prox;
+} No;
+
+int main() {
+
+    No *inicio = NULL;
+    No *novo;
+
+    novo = (No*) malloc(sizeof(No));
+
+    novo->dado = 10;
+    novo->prox = NULL;
+
+    inicio = novo;
+
+    printf("Valor armazenado: %d\n", inicio->dado);
+
+    free(inicio);
+
+    return 0;
+}
