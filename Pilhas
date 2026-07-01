@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+#define TAM 5
+
+int pilha[TAM];
+int topo = -1;
+
+void push(int valor) {
+
+    if (topo == TAM - 1) {
+        printf("Pilha cheia.\n");
+    } else {
+        topo++;
+        pilha[topo] = valor;
+    }
+}
+
+void pop() {
+
+    if (topo == -1) {
+        printf("Pilha vazia.\n");
+    } else {
+        printf("Elemento removido: %d\n", pilha[topo]);
+        topo--;
+    }
+}
+
+int main() {
+
+    push(10);
+    push(20);
+    push(30);
+
+    printf("Topo: %d\n", pilha[topo]);
+
+    pop();
+
+    printf("Novo topo: %d\n", pilha[topo]);
+
+    return 0;
+}
