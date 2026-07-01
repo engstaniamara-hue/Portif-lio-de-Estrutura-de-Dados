@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+#define TAM 5
+
+int fila[TAM];
+int inicio = 0;
+int fim = 0;
+
+void enfileirar(int valor) {
+
+    if (fim == TAM) {
+        printf("Fila cheia.\n");
+    } else {
+        fila[fim] = valor;
+        fim++;
+    }
+}
+
+void desenfileirar() {
+
+    if (inicio == fim) {
+        printf("Fila vazia.\n");
+    } else {
+        printf("Elemento removido: %d\n", fila[inicio]);
+        inicio++;
+    }
+}
+
+void mostrarFila() {
+
+    int i;
+
+    printf("Fila: ");
+
+    for (i = inicio; i < fim; i++) {
+        printf("%d ", fila[i]);
+    }
+
+    printf("\n");
+}
+
+int main() {
+
+    enfileirar(10);
+    enfileirar(20);
+    enfileirar(30);
+
+    mostrarFila();
+
+    desenfileirar();
+
+    mostrarFila();
+
+    return 0;
+}
